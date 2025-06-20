@@ -5,4 +5,4 @@ FROM nginx:alpine
 COPY ./portfolio /usr/share/nginx/html
 
 # Expose port 80
-EXPOSE 80
+EXPOSE 4001
