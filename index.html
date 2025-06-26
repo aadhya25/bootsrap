@@ -1,171 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Student Portfolio</title>
- <!-- Bootstrap 5 CSS -->
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
- <!-- Custom CSS (Optional) -->
- <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Portfolio</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
+<script src="scripts.js"></script>
+
 <body>
- <!-- Navigation Bar -->
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
- <div class="container-fluid">
- <a class="navbar-brand" href="#">My Portfolio</a>
- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
- aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
- <span class="navbar-toggler-icon"></span>
- </button>
- <div class="collapse navbar-collapse" id="navbarNav">
- <ul class="navbar-nav ms-auto">
- <li class="nav-item">
- <a class="nav-link active" aria-current="page" href="#home">Home</a>
- </li>
- <li class="nav-item">
- <a class="nav-link" href="#about">About</a>
- </li>
- <li class="nav-item">
- <a class="nav-link" href="#projects">Projects</a>
- </li>
- <li class="nav-item">
- <a class="nav-link" href="#skills">Skills</a>
- </li>
- <li class="nav-item">
- <a class="nav-link" href="#contact">Contact</a>
- </li>
- </ul>
- </div>
- </div>
- </nav>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">My Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
- <!-- Home Section (Hero) -->
- <section id="home" class="text-center text-white bg-primary py-5">
- <div class="container">
- <h1 class="display-4">Welcome to My Portfolio</h1>
- <p class="lead">A passionate student with a love for coding and problem solving.</p>
- <a href="#about" class="btn btn-light">Learn More</a>
- </div>
- </section>
+  <!-- Home Section -->
+  <section id="home" class="text-center text-white bg-primary py-5">
+    <div class="container">
+      <h1 class="display-4">Welcome to My Portfolio</h1>
+      <p class="lead">A passionate student with a love for coding and problem solving.</p>
+      <a href="#about" class="btn btn-light">Learn More</a>
+    </div>
+  </section>
 
- <!-- About Section -->
- <section id="about" class="container py-5">
- <div class="row">
- <div class="col-md-4 text-center">
- <!-- Profile image removed -->
- <button class="btn btn-secondary mt-3" id="editProfile">Edit Profile</button>
- <input type="file" id="profileInput" class="form-control mt-3 d-none">
- </div>
- <div class="col-md-8">
- <h2>About Me</h2>
- <textarea id="aboutText" class="form-control mb-3" rows="5">Hello! I’m Lakshmi
-Unikkat, currently in my 5th semester of studying Information Science and Engineering at MS
-Ramaiah Institute of Technology. I have a deep passion for computer science, particularly in web
-development, and I enjoy working on innovative and challenging projects. I am constantly learning
-and refining my skills to stay up-to-date with emerging technologies. In this portfolio, you’ll find a
-collection of projects that highlight my work, skills, and growth as I continue to develop my expertise
-in the field.</textarea>
- <p><strong>Education:</strong> B.Tech in Information Science, MS Ramaih Bangalore</p>
- <button class="btn btn-primary" onclick="saveAbout()">Save Changes</button>
- </div>
- </div>
- </section>
+  <!-- About Section -->
+  <section id="about" class="container py-5">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <button class="btn btn-secondary mt-3" id="editProfile">Edit Profile</button>
+        <input type="file" id="profileInput" class="form-control mt-3 d-none">
+      </div>
+      <div class="col-md-8">
+        <h2>About Me</h2>
+        <textarea id="aboutText" class="form-control mb-3" rows="5">Hello! I’m Lakshmi Unikkat, currently in my 5th semester of studying Information Science and Engineering at MS Ramaiah Institute of Technology...</textarea>
+        <p><strong>Education:</strong> B.Tech in Information Science, MS Ramaih Bangalore</p>
+        <button class="btn btn-primary" onclick="saveAbout()">Save Changes</button>
+      </div>
+    </div>
+  </section>
 
- <!-- Projects Section -->
- <section id="projects" class="bg-light py-5">
- <div class="container">
- <h2 class="text-center mb-4">My Projects</h2>
- <div id="projectContainer" class="row">
- <!-- Project Card 1 -->
- <div class="col-md-4 mb-4">
- <div class="card">
- <div class="card-body">
- <h5 class="card-title">College Database Management Application</h5>
- <p class="card-text">A College Database Management System is a software
-application designed to manage and store data related to various aspects of a college or
-university.</p>
- </div>
- </div>
- </div>
- <!-- Project Card 2 -->
- <div class="col-md-4 mb-4">
- <div class="card">
- <div class="card-body">
- <h5 class="card-title">Restaurant Management System</h5>
- <p class="card-text">A Restaurant Management System designed to streamline and
-automate processes such as order management, billing, and inventory tracking.</p>
- </div>
- </div>
- </div>
- <!-- Add Project Button -->
- <div class="col-md-4 mb-4">
- <button class="btn btn-primary w-100" onclick="addProject()">Add Project</button>
- </div>
- </div>
- </div>
- </section>
+  <!-- Projects Section -->
+  <section id="projects" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">My Projects</h2>
+      <div id="projectContainer" class="row">
+        <!-- Project Card 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">College Database Management Application</h5>
+              <p class="card-text">A software system to manage and store college data.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Restaurant Management System</h5>
+              <p class="card-text">Streamlining billing, order management, and inventory tracking.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Add Project Button -->
+        <div class="col-md-4 mb-4">
+          <button class="btn btn-primary w-100" onclick="addProject()">Add Project</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
- <!-- Contact Section -->
- <section id="contact" class="container py-5">
- <h2 class="text-center mb-4">Contact Me</h2>
- <form id="contactForm">
- <div class="mb-3">
- <label for="name" class="form-label">Name</label>
- <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
- </div>
- <div class="mb-3">
- <label for="email" class="form-label">Email</label>
- <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
- </div>
- <div class="mb-3">
- <label for="message" class="form-label">Message</label>
- <textarea class="form-control" id="message" rows="4" placeholder="Enter your message" required></textarea>
- </div>
- <button type="submit" class="btn btn-primary">Submit</button>
- </form>
- </section>
+  <!-- Skills Section -->
+  <section id="skills" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">My Skills</h2>
+      <div id="skillContainer" class="row">
+        <!-- Example Skill -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Python</h5>
+              <p class="card-text">Used for automation and backend development.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Add Skill Button -->
+        <div class="col-md-4 mb-4">
+          <button class="btn btn-primary w-100" onclick="addSkill()">Add Skill</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
- <!-- Footer -->
- <footer class="bg-dark text-white text-center py-3">
- <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
- </footer>
+  <!-- Contact Section -->
+  <section id="contact" class="container py-5">
+    <h2 class="text-center mb-4">Contact Me</h2>
+    <form id="contactForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </section>
 
- <!-- Bootstrap 5 JS -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
+  </footer>
 
- <!-- Custom JavaScript -->
- <script>
- function saveAbout() {
-   const aboutText = document.getElementById('aboutText').value;
-   alert('About section updated: ' + aboutText);
- }
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
- function addProject() {
-   const container = document.getElementById('projectContainer');
-   const title = prompt('Enter Project Title:');
-   const description = prompt('Enter Project Description:');
-   const projectHTML = `<div class="col-md-4 mb-4">
-     <div class="card">
-       <div class="card-body">
-         <h5 class="card-title">${title}</h5>
-         <p class="card-text">${description}</p>
-       </div>
-     </div>
-   </div>`;
-   container.insertAdjacentHTML('beforeend', projectHTML);
- }
+  <!-- Custom JavaScript -->
+  <script>
+    function saveAbout() {
+      const aboutText = document.getElementById('aboutText').value;
+      alert('About section updated: ' + aboutText);
+    }
 
- document.getElementById('editProfile').addEventListener('click', function() {
-   document.getElementById('profileInput').classList.toggle('d-none');
- });
+    function addProject() {
+      const container = document.getElementById('projectContainer');
+      const title = prompt('Enter Project Title:');
+      const description = prompt('Enter Project Description:');
+      if (title && description) {
+        const projectHTML = `<div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">${title}</h5>
+              <p class="card-text">${description}</p>
+            </div>
+          </div>
+        </div>`;
+        container.insertAdjacentHTML('beforeend', projectHTML);
+      }
+    }
 
- // Removed profile image upload logic
+    function addSkill() {
+      const container = document.getElementById('skillContainer');
+      const title = prompt('Enter Skill Name:');
+      const description = prompt('Enter Skill Description:');
+      if (title && description) {
+        const skillHTML = `<div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">${title}</h5>
+              <p class="card-text">${description}</p>
+            </div>
+          </div>
+        </div>`;
+        container.insertAdjacentHTML('beforeend', skillHTML);
+      }
+    }
 
- document.getElementById('contactForm').addEventListener('submit', function(event) {
-   event.preventDefault();
-   alert('Submitted successfully!');
- });
- </script>
+    document.getElementById('editProfile').addEventListener('click', function () {
+      document.getElementById('profileInput').classList.toggle('d-none');
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      alert('Submitted successfully!');
+    });
+  </script>
 </body>
 </html>
